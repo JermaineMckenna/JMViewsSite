@@ -42,7 +42,7 @@ export default function RootLayout({
                 </span>
               </div>
 
-              <nav className="flex flex-wrap items-center gap-4 text-sm text-slate-300">
+              <nav className="flex flex-wrap items-center justify-center gap-4 text-sm text-slate-300 sm:justify-end">
                 <Link href="/services" className="hover:text-slate-50">
                   Services
                 </Link>
@@ -66,9 +66,7 @@ export default function RootLayout({
           <footer className="bg-slate-950 border-t border-slate-800/80">
             <div className="mx-auto flex max-w-6xl flex-col gap-4 px-4 py-6 text-xs text-slate-500 sm:flex-row sm:items-center sm:justify-between">
               <div className="space-y-1">
-                <span className="block">
-                  © {YEAR} JMViews. All rights reserved.
-                </span>
+                <span className="block">© {YEAR} JMViews. All rights reserved.</span>
 
                 <span className="block text-slate-600">
                   Web Design · Photography · Aerial Cinematography · Video · 3D ·
