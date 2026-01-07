@@ -12,6 +12,11 @@ export const metadata: Metadata = {
     "JMViews is a digital creative studio specialising in web design & development, photography, aerial cinematography, video editing, 3D and branding.",
 };
 
+export const viewport = {
+  width: "device-width",
+  initialScale: 1,
+};
+
 export default function RootLayout({
   children,
 }: {
