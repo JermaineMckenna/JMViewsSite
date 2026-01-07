@@ -61,17 +61,17 @@ export default function Home() {
                   <div className="flex items-center justify-between rounded-lg border border-slate-800 bg-slate-950/60 px-3 py-2">
                     <span>Web design & development</span>
                     <span className="text-emerald-400">
-                      Modern web full-stack
+                       Full-Stack
                     </span>
                   </div>
                   <div className="flex items-center justify-between rounded-lg border border-slate-800 bg-slate-950/60 px-3 py-2">
-                    <span>Photography & aerials</span>
+                    <span>Photography & Aerials</span>
                     <span className="text-emerald-400">Sony · DJI</span>
                   </div>
                   <div className="flex items-center justify-between rounded-lg border border-slate-800 bg-slate-950/60 px-3 py-2">
                     <span>3D Animation</span>
                     <span className="text-emerald-400">
-                      Editing · · Effects
+                      Editing · Effects
                     </span>
                   </div>
                   <div className="flex items-center justify-between rounded-lg border border-slate-800 bg-slate-950/60 px-3 py-2">
