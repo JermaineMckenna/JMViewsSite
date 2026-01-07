@@ -54,7 +54,7 @@ export default function Home() {
 
           {/* Studio disciplines summary */}
           <div className="mt-8 flex flex-1 flex-col gap-4 md:mt-0">
-            <div className="h-48 rounded-2xl border border-slate-800 bg-slate-900/60 p-4 sm:h-56">
+            <div className="rounded-2xl border border-slate-800 bg-slate-900/60 p-4">
               <div className="flex h-full flex-col justify-between">
                 <div className="text-xs text-slate-400">Studio disciplines</div>
                 <div className="space-y-2 text-sm">
@@ -81,18 +81,22 @@ export default function Home() {
                 </div>
               </div>
             </div>
-            <div className="grid grid-cols-3 gap-3 text-xs text-slate-400">
+
+            {/* Three feature boxes under Studio Disciplines */}
+            <div className="mt-6 grid gap-3 sm:grid-cols-2 md:grid-cols-3 text-xs text-slate-400">
               <div className="rounded-xl border border-slate-800 bg-slate-900/80 px-3 py-3">
                 <div className="text-emerald-400">Web</div>
                 <div className="mt-1 text-slate-100">High-performance sites</div>
               </div>
+
               <div className="rounded-xl border border-slate-800 bg-slate-900/80 px-3 py-3">
                 <div className="text-emerald-400">Visuals</div>
-                <div className="mt-1 text-slate-100">Photo & aerial sets</div>
+                <div className="mt-1 text-slate-100">Photo &amp; aerial sets</div>
               </div>
+
               <div className="rounded-xl border border-slate-800 bg-slate-900/80 px-3 py-3">
-                <div className="text-emerald-400">3D & Motion</div>
-                <div className="mt-1 text-slate-100">Animation & edits</div>
+                <div className="text-emerald-400">3D &amp; Motion</div>
+                <div className="mt-1 text-slate-100">Animation &amp; edits</div>
               </div>
             </div>
           </div>
