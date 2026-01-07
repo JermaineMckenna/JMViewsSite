@@ -28,34 +28,35 @@ export default function RootLayout({
         <div className="flex min-h-screen flex-col bg-slate-950">
           {/* Header */}
           <header className="bg-slate-950">
-            <div className="mx-auto flex w-full max-w-6xl flex-col gap-3 px-4 py-2 sm:flex-row sm:items-center sm:justify-between">
-              <div className="flex items-center font-semibold tracking-tight">
-                <Link href="/" className="text-slate-50">
-                  JMViews
-                </Link>
-                <span className="ml-2 whitespace-nowrap align-middle text-xs uppercase tracking-[0.2em] text-slate-400">
-                  Digital Services
-                </span>
-              </div>
+  <div className="mx-auto flex w-full max-w-6xl flex-col gap-3 px-4 py-2 sm:flex-row sm:items-center sm:justify-between">
+    <div className="flex items-center font-semibold tracking-tight">
+      <Link href="/" className="text-slate-50">
+        JMViews
+      </Link>
+      {/* Hide on very small screens so it can't cause horizontal overflow */}
+      <span className="ml-2 hidden align-middle text-xs uppercase tracking-[0.2em] text-slate-400 sm:inline-block">
+        Digital Services
+      </span>
+    </div>
 
-              <nav className="flex flex-wrap items-center gap-4 text-sm text-slate-300">
-                <Link href="/services" className="hover:text-slate-50">
-                  Services
-                </Link>
-                <Link href="/portfolio" className="hover:text-slate-50">
-                  Portfolio
-                </Link>
-                <Link href="/about" className="hover:text-slate-50">
-                  About
-                </Link>
-                <Link href="/contact" className="hover:text-slate-50">
-                  Contact
-                </Link>
-              </nav>
-            </div>
-          </header>
+    <nav className="flex flex-wrap items-center gap-4 text-sm text-slate-300">
+      <Link href="/services" className="hover:text-slate-50">
+        Services
+      </Link>
+      <Link href="/portfolio" className="hover:text-slate-50">
+        Portfolio
+      </Link>
+      <Link href="/about" className="hover:text-slate-50">
+        About
+      </Link>
+      <Link href="/contact" className="hover:text-slate-50">
+        Contact
+      </Link>
+    </nav>
+  </div>
+</header>
 
-          {/* Page content */}
+     {/* Page content */}
           <main className="flex-1 bg-slate-950">{children}</main>
 
           {/* Footer */}
