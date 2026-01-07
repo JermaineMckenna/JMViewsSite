@@ -14,7 +14,7 @@ export default function DigitalProjectsPage() {
             </p>
 
             <p className="mt-1.5 text-sm leading-snug text-slate-300">
-              Selected digital pieces combining layout, interaction and visual direction. This page reflects how JMViews approaches building for the web, with work that will continue to grow over time.
+              Selected digital pieces combining layout, interaction and visual direction. This portfolio reflects how approaches building for the web, with work that will continue to grow over time.
             </p>
           </div>
 
@@ -31,9 +31,7 @@ export default function DigitalProjectsPage() {
               </p>
 
               <p className="mt-2 text-xs text-slate-300">
-                A deployed full-stack web app focused on structure, routing and
-                user-facing layout — demonstrating practical application code
-                and end-to-end project delivery.
+                A deployed full-stack web app focused on structure, routing and user-facing layout demonstrating practical application code and end-to-end project delivery.
               </p>
 
               <ul className="mt-3 space-y-1 text-[11px] text-slate-400">
@@ -63,9 +61,7 @@ export default function DigitalProjectsPage() {
               </p>
 
               <p className="mt-2 text-xs text-slate-300">
-                A browser-based interactive memory game demonstrating DOM logic,
-                event handling, state thinking and front-end user feedback
-                patterns.
+                A browser-based interactive memory game demonstrating DOM logic, event handling, state thinking and front-end user feedback patterns.
               </p>
 
               <ul className="mt-3 space-y-1 text-[11px] text-slate-400">
