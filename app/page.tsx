@@ -48,7 +48,7 @@ export default function Home() {
               <span>Sony A7R V photography</span>
               <span>DJI Mavic aerials</span>
               <span>Video editing & motion</span>
-              <span>3D & animation (in progress)</span>
+              <span>3D & animation</span>
             </div>
           </div>
 
@@ -69,9 +69,9 @@ export default function Home() {
                     <span className="text-emerald-400">Sony · DJI</span>
                   </div>
                   <div className="flex items-center justify-between rounded-lg border border-slate-800 bg-slate-950/60 px-3 py-2">
-                    <span>Video, motion & 3D</span>
+                    <span>3D Animation</span>
                     <span className="text-emerald-400">
-                      Editing · Motion · 3D
+                      Editing · · Effects
                     </span>
                   </div>
                   <div className="flex items-center justify-between rounded-lg border border-slate-800 bg-slate-950/60 px-3 py-2">

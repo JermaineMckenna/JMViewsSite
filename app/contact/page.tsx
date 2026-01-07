@@ -34,19 +34,21 @@ export default function ContactPage() {
       <section className="bg-slate-950">
         <div className="mx-auto flex max-w-6xl flex-col items-center px-4 py-4 sm:py-6">
           {/* Heading + intro text */}
-          <div className="mx-auto max-w-3xl text-center">
-            <h1 className="text-xs font-semibold uppercase tracking-[0.25em] text-emerald-400">
-              Contact
-            </h1>
+          <div className="w-full max-w-2xl text-center sm:text-left">
+  <h1 className="text-xs font-semibold uppercase tracking-[0.25em] text-emerald-400">
+    Contact
+  </h1>
 
-            <p className="mt-2 text-3xl font-semibold tracking-tight sm:text-4xl">
-             Let&apos;s talk about your project.
-            </p>
+  <p className="mt-2 text-3xl font-semibold tracking-tight sm:text-4xl">
+    Let&apos;s talk about your project.
+  </p>
 
-            <p className="mt-1.5 text-sm leading-snug text-slate-300">
-Use the form below to outline what you have in mind. whether it is a website, set of visuals, or something that blends web, video and 3D. You'll receive a reply once your message has been reviewed.
-            </p>
-          </div>
+  <p className="mt-2 max-w-2xl mx-auto text-sm text-slate-300 leading-snug tracking-normal">
+    Use the form below to outline what you have in mind — whether it’s a website,
+    a set of visuals, or something that blends web, video and 3D. You&apos;ll receive
+    a reply once your message has been reviewed.
+  </p>
+</div>
 
           {/* Form */}
           <form
