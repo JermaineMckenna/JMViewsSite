@@ -31,7 +31,16 @@ export async function POST(request: Request) {
 
     if (!resendKey || !toEmail || !fromEmail) {
       return Response.json(
-        { ok: false, error: "Missing server email configuration." },
+        {
+          ok: false,
+          error:
+            "Missing env vars. Need RESEND_API_KEY, CONTACT_TO_EMAIL, CONTACT_FROM_EMAIL.",
+          present: {
+            RESEND_API_KEY: Boolean(resendKey),
+            CONTACT_TO_EMAIL: Boolean(toEmail),
+            CONTACT_FROM_EMAIL: Boolean(fromEmail),
+          },
+        },
         { status: 500 }
       );
     }
@@ -44,7 +53,6 @@ export async function POST(request: Request) {
     const budget = (data.budget ?? "").toString().trim();
     const message = (data.message ?? "").toString().trim();
 
-    // Validate
     if (!name || name.length < 2) {
       return Response.json({ ok: false, error: "Name is required." }, { status: 400 });
     }
@@ -56,9 +64,6 @@ export async function POST(request: Request) {
         { ok: false, error: "Message must be at least 10 characters." },
         { status: 400 }
       );
-    }
-    if (message.length > 5000) {
-      return Response.json({ ok: false, error: "Message is too long." }, { status: 400 });
     }
 
     const resend = new Resend(resendKey);
@@ -74,13 +79,13 @@ export async function POST(request: Request) {
         ${budget ? `<p style="margin:0 0 8px 0;"><strong>Budget:</strong> ${escapeHtml(budget)}</p>` : ""}
         <hr style="border:none; border-top:1px solid #e2e8f0; margin:16px 0;" />
         <p style="margin:0 0 8px 0;"><strong>Message:</strong></p>
-        <pre style="white-space:pre-wrap; background:#f8fafc; padding:12px; border-radius:8px; border:1px solid #e2e8f0; margin:0;">
-${escapeHtml(message)}
-        </pre>
+        <pre style="white-space:pre-wrap; background:#f8fafc; padding:12px; border-radius:8px; border:1px solid #e2e8f0; margin:0;">${escapeHtml(
+          message
+        )}</pre>
       </div>
     `;
 
-    const { error } = await resend.emails.send({
+    const result = await resend.emails.send({
       from: `JMViews Contact <${fromEmail}>`,
       to: [toEmail],
       replyTo: email,
@@ -88,14 +93,18 @@ ${escapeHtml(message)}
       html,
     });
 
-    if (error) {
-      console.error("Resend send error:", error);
-      return Response.json({ ok: false, error: "Email sending failed." }, { status: 500 });
+    if (result.error) {
+      return Response.json(
+        { ok: false, error: "Resend error", details: result.error },
+        { status: 500 }
+      );
     }
 
-    return Response.json({ ok: true }, { status: 200 });
-  } catch (err) {
-    console.error("Contact API error:", err);
-    return Response.json({ ok: false, error: "Invalid request." }, { status: 400 });
+    return Response.json({ ok: true, id: result.data?.id ?? null }, { status: 200 });
+  } catch (err: any) {
+    return Response.json(
+      { ok: false, error: "Server exception", details: String(err?.message ?? err) },
+      { status: 500 }
+    );
   }
 }
