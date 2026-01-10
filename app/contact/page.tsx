@@ -129,6 +129,6 @@ export default function ContactPage() {
           </form>
         </div>
       </section>
-    </div>
+    </div>
   );
 }
