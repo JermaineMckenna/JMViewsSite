@@ -140,20 +140,32 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
               </div>
 
               {/* NAV: neat 2x2 grid on mobile, normal row on desktop */}
-              <nav className="grid w-full grid-cols-2 gap-x-6 gap-y-2 text-sm text-slate-300 sm:flex sm:w-auto sm:items-center sm:justify-end sm:gap-x-5 sm:gap-y-0">
-                <Link className="inline-flex items-center justify-center whitespace-nowrap leading-none hover:text-slate-50" href="/services">
-                  Services
-                </Link>
-                <Link className="inline-flex items-center justify-center whitespace-nowrap leading-none hover:text-slate-50" href="/portfolio">
-                  Portfolio
-                </Link>
-                <Link className="inline-flex items-center justify-center whitespace-nowrap leading-none hover:text-slate-50" href="/about">
-                  About
-                </Link>
-                <Link className="inline-flex items-center justify-center whitespace-nowrap leading-none hover:text-slate-50" href="/contact">
-                  Contact
-                </Link>
-              </nav>
+              <nav className="flex w-full flex-wrap items-center justify-center gap-x-6 gap-y-2 text-sm text-slate-300 sm:w-auto sm:justify-end">
+  <Link
+    className="inline-flex items-center justify-center whitespace-nowrap leading-none hover:text-slate-50"
+    href="/services"
+  >
+    Services
+  </Link>
+  <Link
+    className="inline-flex items-center justify-center whitespace-nowrap leading-none hover:text-slate-50"
+    href="/portfolio"
+  >
+    Portfolio
+  </Link>
+  <Link
+    className="inline-flex items-center justify-center whitespace-nowrap leading-none hover:text-slate-50"
+    href="/about"
+  >
+    About
+  </Link>
+  <Link
+    className="inline-flex items-center justify-center whitespace-nowrap leading-none hover:text-slate-50"
+    href="/contact"
+  >
+    Contact
+  </Link>
+</nav>
             </div>
           </header>
 
