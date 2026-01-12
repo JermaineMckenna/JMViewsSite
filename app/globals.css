@@ -28,7 +28,7 @@ svg {
 display: block;
 }
 
-/* Extra mobile safety */
+/* Extra mobile safety (IMPORTANT: needs @media) */
 @media (max-width: 640px) {
   html,
   body {
