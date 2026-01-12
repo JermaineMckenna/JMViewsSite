@@ -7,9 +7,40 @@ const inter = Inter({ subsets: ["latin"] });
 const YEAR = new Date().getFullYear();
 
 export const metadata: Metadata = {
-  title: "JMViews — Digital Creative Studio",
+  title: {
+    default: "JMViews — Digital Creative Studio",
+    template: "%s | JMViews",
+  },
   description:
-    "JMViews is a digital creative studio specialising in web design & development, photography, aerial cinematography, video editing, 3D and branding.",
+    "JMViews is a UK-based digital creative studio specialising in web design & development, photography, aerial cinematography, video editing, 3D and branding.",
+
+  metadataBase: new URL("https://YOUR-VERCEL-URL.vercel.app"),
+
+  openGraph: {
+    title: "JMViews — Digital Creative Studio",
+    description:
+      "Web design, photography, aerial cinematography, video editing, and 3D — a modern digital studio based in the UK.",
+    url: "https://jm-views-site.vercel.app/",
+    siteName: "JMViews",
+    images: [
+      {
+        url: "/og.jpg",
+        width: 1200,
+        height: 630,
+        alt: "JMViews — Digital Creative Studio",
+      },
+    ],
+    locale: "en_GB",
+    type: "website",
+  },
+
+  twitter: {
+    card: "summary_large_image",
+    title: "JMViews — Digital Creative Studio",
+    description:
+      "Web design, photography, aerial cinematography, video editing, and 3D.",
+    images: ["/og.jpg"],
+  },
 };
 
 export const viewport = {
