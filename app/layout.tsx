@@ -140,28 +140,33 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
               </div>
 
               {/* NAV: neat 2x2 grid on mobile, normal row on desktop */}
-              <nav className="flex w-full flex-wrap items-center justify-center gap-x-6 gap-y-2 text-sm text-slate-300 sm:w-auto sm:justify-end">
+              <nav
+  className="
+    grid w-full grid-cols-4 items-center text-sm text-slate-300
+    sm:w-auto sm:flex sm:justify-end sm:gap-x-5
+  "
+>
   <Link
-    className="inline-flex items-center justify-center whitespace-nowrap leading-none hover:text-slate-50"
     href="/services"
+    className="flex justify-center whitespace-nowrap leading-none hover:text-slate-50"
   >
     Services
   </Link>
   <Link
-    className="inline-flex items-center justify-center whitespace-nowrap leading-none hover:text-slate-50"
     href="/portfolio"
+    className="flex justify-center whitespace-nowrap leading-none hover:text-slate-50"
   >
     Portfolio
   </Link>
   <Link
-    className="inline-flex items-center justify-center whitespace-nowrap leading-none hover:text-slate-50"
     href="/about"
+    className="flex justify-center whitespace-nowrap leading-none hover:text-slate-50"
   >
     About
   </Link>
   <Link
-    className="inline-flex items-center justify-center whitespace-nowrap leading-none hover:text-slate-50"
     href="/contact"
+    className="flex justify-center whitespace-nowrap leading-none hover:text-slate-50"
   >
     Contact
   </Link>
