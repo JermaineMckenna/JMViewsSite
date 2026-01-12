@@ -1,31 +1,37 @@
 @import "tailwindcss";
 
-/* Global dark theme baseline */
-html,
-body {
-background-color: #020617; /* slate-950 equivalent */
-caret-color: #f8fafc;
-margin: 0;
-padding-right: 0;
+/* Global baseline */
+*,
+*::before,
+*::after {
+box-sizing: border-box;
 }
 
-/* Remove iOS bounce white flash */
+html,
+body {
+background-color: #020617; /* slate-950 */
+caret-color: #f8fafc;
+margin: 0;
+padding: 0;
+width: 100%;
+max-width: 100%;
+overflow-x: hidden; /* hard stop sideways scroll */
+}
+
+/* Prevent “white flash” / overscroll bounce */
 body {
 overscroll-behavior-y: none;
 }
 
-/* Make sure pages always fill height */
-#__next,
-body,
-html {
-min-height: 100%;
+/* Make SVGs behave consistently (fixes “icons not showing / misaligned”) */
+svg {
+display: block;
 }
 
-/* Mobile safety: prevent horizontal scroll */
+/* Mobile safety */
 @media (max-width: 640px) {
   html,
   body {
-max-width: 100%;
-overflow-anchor: hidden;
+overflow-x: hidden;
 }
 }
