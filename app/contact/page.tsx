@@ -60,12 +60,12 @@ export default function ContactPage() {
               Let&apos;s talk about your project.
             </p>
 
-            <p className="mt-2 mx-auto max-w-2xl text-sm text-slate-300 leading-snug tracking-normal sm:mx-0">
-              Use the form below to outline what you have in mind - whether it&apos;s a
-              website, a set of visuals, or something that blends web, video and 3D.
-              You&apos;ll receive a reply once your message has been reviewed.
-            </p>
-          </div>
+            <p className="mt-3 max-w-2xl text-sm leading-relaxed text-slate-300 text-center sm:text-left">
+            Use the form below to outline what you have in mind — whether it&apos;s a website,
+            a set of visuals, or something that blends web, video and 3D. You&apos;ll receive a
+            reply once your message has been reviewed.
+            </p>
+            </div>
 
           <form
             onSubmit={handleSubmit}
