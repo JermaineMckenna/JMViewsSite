@@ -105,20 +105,24 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                 </span>
               </div>
 
-              <nav className="flex flex-wrap items-center justify-center gap-x-5 gap-y-2 text-sm text-slate-300 sm:justify-end">
-                <Link className="inline-flex items-center whitespace-nowrap leading-none hover:text-slate-50" href="/services">
-                  Services
-                </Link>
-                <Link className="inline-flex items-center whitespace-nowrap leading-none hover:text-slate-50" href="/portfolio">
-                  Portfolio
-                </Link>
-                <Link className="inline-flex items-center whitespace-nowrap leading-none hover:text-slate-50" href="/about">
-                  About
-                </Link>
-                <Link className="inline-flex items-center whitespace-nowrap leading-none hover:text-slate-50" href="/contact">
-                  Contact
-                </Link>
-              </nav>
+              <nav
+  className="
+    grid w-full grid-cols-2 gap-x-6 gap-y-2 text-sm text-slate-300
+    sm:w-auto sm:grid-cols-none sm:auto-cols-max sm:grid-flow-col sm:items-center sm:justify-end sm:gap-x-5
+  ">
+  <Link className="inline-flex items-center justify-center whitespace-nowrap leading-none hover:text-slate-50" href="/services">
+    Services
+  </Link>
+  <Link className="inline-flex items-center justify-center whitespace-nowrap leading-none hover:text-slate-50" href="/portfolio">
+    Portfolio
+  </Link>
+  <Link className="inline-flex items-center justify-center whitespace-nowrap leading-none hover:text-slate-50" href="/about">
+    About
+  </Link>
+  <Link className="inline-flex items-center justify-center whitespace-nowrap leading-none hover:text-slate-50" href="/contact">
+    Contact
+  </Link>
+</nav>
             </div>
           </header>
 
@@ -151,7 +155,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                                focus:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500/60"
                   >
                     {/* Force icon sizing + color inheritance */}
-                    <span className="h-4 w-4 text-current">{item.icon}</span>
+<span className="grid h-4 w-4 place-items-center text-current [&_svg]:h-4 [&_svg]:w-4 [&_svg]:block">
+  {item.icon}
+</span>
                   </a>
                 ))}
               </div>
