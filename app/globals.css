@@ -5,38 +5,33 @@
 *::before,
 *::after {
 box-sizing: border-box;
-min-width: 0;
 }
 
 html,
 body {
-background-color: #020617; /* slate-950 */
+background-color: #020617;
 caret-color: #f8fafc;
 margin: 0;
 padding: 0;
 width: 100%;
 max-width: 100%;
+overflow-x: hidden; /* hard stop sideways scroll */
 }
 
-  /* Hard stop sideways scroll */
-{
-overflow-x: clip;
-}
-
-/* Prevent “white flash” / overscroll bounce */
+/* Prevent iOS overscroll “white flash” */
 body {
 overscroll-behavior-y: none;
 }
 
-/* Make sure SVGs behave consistently */
+/* SVG consistency */
 svg {
 display: block;
 }
 
-/* Mobile safety */
+/* Extra mobile safety */
 @media (max-width: 640px) {
   html,
   body {
-overflow-x: clip;
+overflow-x: hidden;
 }
 }
