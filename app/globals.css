@@ -15,17 +15,22 @@ margin: 0;
 padding: 0;
 width: 100%;
 max-width: 100%;
-overflow-x: hidden; /* hard stop sideways scroll */
 }
 
-/* Prevent “white flash” / overscroll bounce */
+  /* hard stop sideways scroll (iOS-friendly) */
+{
+overflow-x: hidden;
+overflow-x: clip;
+}
+
+/* Prevent iOS bounce white flash */
 body {
 overscroll-behavior-y: none;
 }
 
 /* Make SVGs behave consistently */
 svg {
-  display: block;
+display: block;
 }
 
 /* Mobile safety */
@@ -33,5 +38,6 @@ svg {
   html,
   body {
 overflow-x: hidden;
+overflow-x: clip;
 }
 }

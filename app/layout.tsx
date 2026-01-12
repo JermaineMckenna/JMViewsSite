@@ -17,12 +17,12 @@ export const viewport = {
   initialScale: 1,
 };
 
-function IconInstagram() {
+function IconInstagram({ className = "" }: { className?: string }) {
   return (
     <svg
       aria-hidden="true"
       viewBox="0 0 24 24"
-      className="h-4 w-4"
+      className={`h-4 w-4 ${className}`}
       fill="none"
       stroke="currentColor"
       strokeWidth="1.6"
@@ -34,36 +34,51 @@ function IconInstagram() {
   );
 }
 
-function IconTikTok() {
+function IconTikTok({ className = "" }: { className?: string }) {
   return (
-    <svg aria-hidden="true" viewBox="0 0 24 24" className="h-4 w-4" fill="currentColor">
+    <svg
+      aria-hidden="true"
+      viewBox="0 0 24 24"
+      className={`h-4 w-4 ${className}`}
+      fill="currentColor"
+    >
       <path d="M15.5 5.1c.6.7 1.4 1.3 2.3 1.7.4.2.9.3 1.4.4v2.3c-.8-.1-1.5-.3-2.2-.6-.5-.2-1-.4-1.5-.7v6.1c0 2.8-2.2 5-4.9 5-2.7 0-4.9-2.2-4.9-5 0-2.7 2.2-4.9 4.9-4.9.3 0 .7 0 1 .1v2.4c-.3-.1-.6-.2-.9-.2-1.3 0-2.4 1.1-2.4 2.5 0 1.3 1.1 2.4 2.4 2.4 1.3 0 2.4-1.1 2.4-2.4V3.9h2.4v1.2z" />
     </svg>
   );
 }
 
-function IconGitHub() {
+function IconGitHub({ className = "" }: { className?: string }) {
   return (
-    <svg aria-hidden="true" viewBox="0 0 24 24" className="h-4 w-4" fill="currentColor">
+    <svg
+      aria-hidden="true"
+      viewBox="0 0 24 24"
+      className={`h-4 w-4 ${className}`}
+      fill="currentColor"
+    >
       <path d="M12 2C6.5 2 2 6.6 2 12.1c0 4.5 2.9 8.2 6.9 9.5.5.1.6-.2.6-.4v-1.6c-2.8.6-3.4-1.3-3.4-1.3-.4-1-1-1.3-1-1.3-.8-.6.1-.6.1-.6.9.1 1.3 1 1.3 1 .8 1.4 2.1 1 2.6.8.1-.6.3-1 .6-1.2-2.2-.3-4.4-1.1-4.4-4.9 0-1.1.4-2 1-2.8-.1-.2-.4-1.2.1-2.4 0 0 .8-.3 2.8 1 .8-.2 1.6-.3 2.4-.3s1.6.1 2.4.3c2-1.3 2.8-1 2.8-1 .5 1.2.2 2.2.1 2.4.6.8 1 1.7 1 2.8 0 3.8-2.3 4.6-4.5 4.9.3.3.6.8.6 1.6v2.3c0 .2.1.5.6.4 4-1.3 6.9-5 6.9-9.5C22 6.6 17.5 2 12 2z" />
     </svg>
   );
 }
 
-function IconBehance() {
+function IconBehance({ className = "" }: { className?: string }) {
   return (
-    <svg aria-hidden="true" viewBox="0 0 24 24" className="h-4 w-4" fill="currentColor">
+    <svg
+      aria-hidden="true"
+      viewBox="0 0 24 24"
+      className={`h-4 w-4 ${className}`}
+      fill="currentColor"
+    >
       <path d="M9.2 11.2c.9-.4 1.5-1.2 1.5-2.2 0-2-1.6-3-3.9-3H2.9v12h4.4c2.5 0 4.2-1.1 4.2-3.5 0-1.6-.8-2.7-2.3-3.3zM5.2 8h1.5c1 0 1.7.3 1.7 1.2 0 .9-.6 1.3-1.6 1.3H5.2V8zm1.8 8H5.2v-3.4h1.9c1.2 0 2 .4 2 1.7 0 1.3-.8 1.7-2.1 1.7zm7.2-8.9h3.8V5.8h-3.8v1.3zM16 8.8c-2.6 0-4.4 1.9-4.4 4.7 0 2.9 1.7 4.7 4.6 4.7 2 0 3.5-1 4.1-2.8H18c-.2.6-.7 1-1.4 1-1 0-1.6-.6-1.7-1.8h5.6c.1-3.2-1.3-5.8-4-5.8zm-1.1 3.8c.1-1 .6-1.6 1.5-1.6.9 0 1.4.6 1.4 1.6h-2.9z" />
     </svg>
   );
 }
 
-function IconPinterest() {
+function IconPinterest({ className = "" }: { className?: string }) {
   return (
     <svg
       aria-hidden="true"
       viewBox="0 0 24 24"
-      className="h-4 w-4"
+      className={`h-4 w-4 ${className}`}
       fill="none"
       stroke="currentColor"
       strokeWidth="1.6"
@@ -80,17 +95,17 @@ function IconPinterest() {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   const social = [
-    { href: "https://www.instagram.com/jaymviews/", label: "Instagram", icon: <IconInstagram /> },
-    { href: "https://www.tiktok.com/@jmviews94?lang=en-GB", label: "TikTok", icon: <IconTikTok /> },
-    { href: "https://github.com/JermaineMckenna/", label: "GitHub", icon: <IconGitHub /> },
-    { href: "https://www.behance.net/jermainemckenna1", label: "Behance", icon: <IconBehance /> },
-    { href: "https://uk.pinterest.com/jermainemckenna_/", label: "Pinterest", icon: <IconPinterest /> },
+    { href: "https://www.instagram.com/jaymviews/", label: "Instagram", Icon: IconInstagram },
+    { href: "https://www.tiktok.com/@jmviews94?lang=en-GB", label: "TikTok", Icon: IconTikTok },
+    { href: "https://github.com/JermaineMckenna/", label: "GitHub", Icon: IconGitHub },
+    { href: "https://www.behance.net/jermainemckenna1", label: "Behance", Icon: IconBehance },
+    { href: "https://uk.pinterest.com/jermainemckenna_/", label: "Pinterest", Icon: IconPinterest },
   ];
 
   return (
-    <html lang="en">
-      <body className={inter.className + " bg-slate-950 text-slate-50"}>
-        <div className="flex min-h-screen flex-col bg-slate-950">
+    <html lang="en" className="overflow-x-hidden">
+      <body className={inter.className + " bg-slate-950 text-slate-50 overflow-x-hidden"}>
+        <div className="flex min-h-screen flex-col bg-slate-950 overflow-x-hidden">
           {/* Header */}
           <header className="bg-slate-950">
             <div className="mx-auto flex w-full max-w-6xl flex-col gap-2 px-4 py-2 sm:flex-row sm:items-center sm:justify-between">
@@ -98,25 +113,23 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                 <Link href="/" className="text-slate-50">
                   JMViews
                 </Link>
-
-                {/* Hide on very small screens so it can't cause horizontal overflow */}
                 <span className="ml-2 hidden align-middle text-xs uppercase tracking-[0.2em] text-slate-400 sm:inline-block">
                   Digital Services
                 </span>
               </div>
 
-              {/* Mobile: neat 2x2 grid. Desktop: same row layout */}
+              {/* Mobile: 2x2 grid. Desktop: same row */}
               <nav className="grid grid-cols-2 gap-x-5 gap-y-2 text-sm text-slate-300 sm:flex sm:flex-wrap sm:items-center sm:justify-end sm:gap-x-5 sm:gap-y-2">
-                <Link className="inline-flex items-center justify-start whitespace-nowrap leading-none hover:text-slate-50 sm:justify-center" href="/services">
+                <Link className="inline-flex items-center whitespace-nowrap leading-none hover:text-slate-50" href="/services">
                   Services
                 </Link>
-                <Link className="inline-flex items-center justify-start whitespace-nowrap leading-none hover:text-slate-50 sm:justify-center" href="/portfolio">
+                <Link className="inline-flex items-center whitespace-nowrap leading-none hover:text-slate-50" href="/portfolio">
                   Portfolio
                 </Link>
-                <Link className="inline-flex items-center justify-start whitespace-nowrap leading-none hover:text-slate-50 sm:justify-center" href="/about">
+                <Link className="inline-flex items-center whitespace-nowrap leading-none hover:text-slate-50" href="/about">
                   About
                 </Link>
-                <Link className="inline-flex items-center justify-start whitespace-nowrap leading-none hover:text-slate-50 sm:justify-center" href="/contact">
+                <Link className="inline-flex items-center whitespace-nowrap leading-none hover:text-slate-50" href="/contact">
                   Contact
                 </Link>
               </nav>
@@ -139,24 +152,20 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                 </a>
               </div>
 
-              {/* Social links */}
+              {/* Social links (icons forced visible) */}
               <div className="flex flex-wrap items-center gap-2 sm:justify-end">
-                {social.map((item) => (
+                {social.map(({ href, label, Icon }) => (
                   <a
-                    key={item.label}
-                    href={item.href}
+                    key={label}
+                    href={href}
                     target="_blank"
                     rel="noreferrer"
-                    aria-label={`JMViews on ${item.label}`}
-                    className="inline-flex h-9 w-9 items-center justify-center rounded-full border border-slate-700 bg-slate-900/60 text-slate-200
+                    aria-label={`JMViews on ${label}`}
+                    className="group inline-flex h-9 w-9 items-center justify-center rounded-full border border-slate-700 bg-slate-900/60
                                transition-colors duration-150
-                               hover:border-emerald-400 hover:text-emerald-400
-                               focus:outline-none focus:ring-2 focus:ring-emerald-500/60"
+                               hover:border-emerald-400 focus:outline-none focus:ring-2 focus:ring-emerald-500/60"
                   >
-                    {/* Force icon visibility: inherits currentColor from the anchor */}
-                    <span className="flex h-4 w-4 items-center justify-center text-current">
-                      {item.icon}
-                    </span>
+                    <Icon className="text-slate-200 group-hover:text-emerald-400" />
                   </a>
                 ))}
               </div>
