@@ -23,9 +23,9 @@ body {
 overscroll-behavior-y: none;
 }
 
-/* Make SVGs behave consistently (fixes “icons not showing / misaligned”) */
+/* Make SVGs behave consistently */
 svg {
-display: block;
+  display: block;
 }
 
 /* Mobile safety */

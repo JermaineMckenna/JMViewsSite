@@ -51,7 +51,6 @@ function IconGitHub() {
 }
 
 function IconBehance() {
-  // Simple Behance mark
   return (
     <svg aria-hidden="true" viewBox="0 0 24 24" className="h-4 w-4" fill="currentColor">
       <path d="M9.2 11.2c.9-.4 1.5-1.2 1.5-2.2 0-2-1.6-3-3.9-3H2.9v12h4.4c2.5 0 4.2-1.1 4.2-3.5 0-1.6-.8-2.7-2.3-3.3zM5.2 8h1.5c1 0 1.7.3 1.7 1.2 0 .9-.6 1.3-1.6 1.3H5.2V8zm1.8 8H5.2v-3.4h1.9c1.2 0 2 .4 2 1.7 0 1.3-.8 1.7-2.1 1.7zm7.2-8.9h3.8V5.8h-3.8v1.3zM16 8.8c-2.6 0-4.4 1.9-4.4 4.7 0 2.9 1.7 4.7 4.6 4.7 2 0 3.5-1 4.1-2.8H18c-.2.6-.7 1-1.4 1-1 0-1.6-.6-1.7-1.8h5.6c.1-3.2-1.3-5.8-4-5.8zm-1.1 3.8c.1-1 .6-1.6 1.5-1.6.9 0 1.4.6 1.4 1.6h-2.9z" />
@@ -106,18 +105,18 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                 </span>
               </div>
 
-              {/* FIX: consistent link sizing so “Services” + “Contact” never drift/disappear */}
-              <nav className="flex flex-wrap items-center justify-center gap-x-5 gap-y-2 text-sm text-slate-300 sm:justify-end">
-                <Link className="inline-flex items-center whitespace-nowrap leading-none hover:text-slate-50" href="/services">
+              {/* Mobile: neat 2x2 grid. Desktop: same row layout */}
+              <nav className="grid grid-cols-2 gap-x-5 gap-y-2 text-sm text-slate-300 sm:flex sm:flex-wrap sm:items-center sm:justify-end sm:gap-x-5 sm:gap-y-2">
+                <Link className="inline-flex items-center justify-start whitespace-nowrap leading-none hover:text-slate-50 sm:justify-center" href="/services">
                   Services
                 </Link>
-                <Link className="inline-flex items-center whitespace-nowrap leading-none hover:text-slate-50" href="/portfolio">
+                <Link className="inline-flex items-center justify-start whitespace-nowrap leading-none hover:text-slate-50 sm:justify-center" href="/portfolio">
                   Portfolio
                 </Link>
-                <Link className="inline-flex items-center whitespace-nowrap leading-none hover:text-slate-50" href="/about">
+                <Link className="inline-flex items-center justify-start whitespace-nowrap leading-none hover:text-slate-50 sm:justify-center" href="/about">
                   About
                 </Link>
-                <Link className="inline-flex items-center whitespace-nowrap leading-none hover:text-slate-50" href="/contact">
+                <Link className="inline-flex items-center justify-start whitespace-nowrap leading-none hover:text-slate-50 sm:justify-center" href="/contact">
                   Contact
                 </Link>
               </nav>
@@ -140,7 +139,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                 </a>
               </div>
 
-              {/* Social links — FIXED sizing + stable hover */}
+              {/* Social links */}
               <div className="flex flex-wrap items-center gap-2 sm:justify-end">
                 {social.map((item) => (
                   <a
@@ -154,7 +153,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                                hover:border-emerald-400 hover:text-emerald-400
                                focus:outline-none focus:ring-2 focus:ring-emerald-500/60"
                   >
-                    <span className="pointer-events-none flex h-4 w-4 items-center justify-center">
+                    {/* Force icon visibility: inherits currentColor from the anchor */}
+                    <span className="flex h-4 w-4 items-center justify-center text-current">
                       {item.icon}
                     </span>
                   </a>
